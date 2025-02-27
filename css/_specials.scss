@@ -1,0 +1,176 @@
+html
+{
+    scroll-behavior: smooth;
+    max-width: 100%;
+
+    //overflow-x: hidden;
+    
+}
+body 
+{
+    position: relative;
+    overflow-x: hidden;
+    //min-height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s !important;
+    //background: #FDDD93;
+
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: scroll; /* Enable vertical scrolling */
+
+    &.is-visible
+    {
+        opacity: 1;
+        visibility: visible;
+        transition: all .4s !important;
+    }
+}
+
+.wrapper
+{
+    overflow-x: hidden;
+}
+
+.container
+{
+    margin: auto;
+}
+
+
+
+.is-blurry
+{
+    filter: blur(8px);
+}
+
+.mobile-hidden
+{
+    display: none;
+    @include breakpoint(min, medium) {
+        display: block;
+    };
+}
+
+.desktop-hidden
+{
+    display: block;
+    @include breakpoint(min, medium) {
+        display: none;
+    };
+}
+
+.text-custom-h2
+{
+    font-size: 1.4rem;
+    line-height: 1.65rem;
+
+    @include breakpoint(min, medium) {
+        font-size: 2.5rem;
+    line-height: 2.81rem;
+    };
+
+}
+
+.text-custom-h3
+{
+    font-size: 2.125rem;
+    // line-height: 2.81rem;
+}
+
+.text-custom-h4
+{
+    font-size: 1.2rem;
+    line-height: 1.3;
+    // line-height: 2.81rem;
+    @include breakpoint(min, medium) {
+        font-size: 1.625rem;
+    };
+}
+
+.bg-custom-color
+{
+    background-color: $color;
+}
+
+.bg-custom-bar
+{
+    background: $colorContrast; 
+}
+
+.bg-custom-bar2
+{
+    background: $colorContrast2; 
+}
+
+.text-custom-tag
+{
+    color: #b4e0df;
+}
+
+.text-custom-color
+{
+    color: $colorContrast !important;
+}
+
+.w-custom-logo
+{
+    width: 5rem;
+
+    @include breakpoint(min, medium) {
+        width: 3.75rem;
+    };
+}
+
+.border-t-custom
+{
+    border-top: solid 3px !important;
+}
+
+.max-w-custom { max-width: 1185px !important; }
+
+// .decoration {
+//     color: white;
+//     font-size: 2em;
+//     font-weight: bold;
+    
+//     background-image: linear-gradient(to bottom, transparent 50%, #7DE856 50%);
+//     padding: .1em .4em;
+    
+//     -webkit-box-decoration-break: clone;
+//     -o-box-decoration-break: clone;
+//     box-decoration-break: clone;
+//   }
+
+// #opening-center:hover
+// {
+//     transform: scale(2);
+//     transform-origin: center center;
+// }
+
+
+#opening-graph-line
+{
+    stroke-dasharray: 340;
+    stroke-dashoffset: 340;
+
+    &.is-drawn 
+    {
+        stroke-dasharray: 340;
+        stroke-dashoffset: 170;
+        animation: dash 1.5s linear forwards;
+        opacity: 1 !important;
+    }
+
+}
+
+
+@keyframes dash {
+    from {
+      stroke-dashoffset: 340;
+    }
+    to {
+      stroke-dashoffset: 170;
+    }
+  }

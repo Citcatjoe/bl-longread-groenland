@@ -1,0 +1,587 @@
+{# Looking fot these files in given path #}
+{% use '_metas-and-scripts.html.twig' %}
+{% use '_header-and-share.html.twig' %}
+{% use '_html-elements.html.twig' %}
+
+<!DOCTYPE HTML>
+
+<html lang="fr" class="h-full relative"> 
+	<head>
+		{{ block('consent') }}
+
+		<script src="https://cdn.tailwindcss.com"></script>  
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@600&display=swap" rel="stylesheet"> -->
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/main.css">
+		<!-- <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" /> -->
+
+		{# <?php include 'hb_card_tp.php'; ?> #}
+		{{ block('head_brand') }}
+		
+	</head>
+	<!-- OneTrust Cookies Consent Notice start for blick.ch -->
+	<!-- <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="d57e5842-f42f-46bc-a4ea-4a82bd82322c" ></script>
+	<script type="text/javascript">
+	function OptanonWrapper() { } 
+	</script> -->
+	<!-- OneTrust Cookies Consent Notice end for blick.ch --> 
+	{# {{ block('frame') }} #}
+	<body class="bg-white h-full"> 
+		<div class="wrapper bg-slate-100">
+		<!-- {{ block('loading_overlay') }} -->
+		{{ block('gtm') }}
+		
+		{{ block('header') }}
+		{{ block('menu_overlay') }}
+		
+		
+	<div class="hero container max-w-screen-2xl md:flex flex-row">
+		<div class="herochild w-full md:w-1/2 h-96 md:h-auto"></div>
+		<div class="herogradient bg-violet-100 w-full md:w-1/2 px-4 md:px-12 pt-8 md:pt-28 pb-8 md:pb-12">
+			<div>
+				<h1 class="text-gradient text-4xl lg:text-7xl font-semibold mb-6 md:mb-10">
+					Trois frères romands, rois du cannabis
+				</h1>
+				<div class="container authors md:flex py-4 border-y border-slate-400">
+					<div class="author w-full md:w-5/12 mb-3 md:mb-0">
+						<a target="_blank" href="https://www.blick.ch/fr/auteurs/antoine-hu-rlimann-journaliste-blick-id16519904.html" class="flex items-center">
+							<div class="align-text-bottom text-xs">
+								<span class="inline-block font-extrabold underline">Antoine Hürlimann</span><br>Responsable de l’actualité de L’illustré<br>
+								<!-- <span class="inline-block">Texte</span> -->
+							</div>
+						</a>
+					</div>
+					<div class="author w-full md:w-5/12 md:pl-4">
+						<div class="align-text-bottom text-xs">
+							<span class="inline-block font-extrabold">Julie de Tribolet</span><br>Photographe L’illustré<br>
+							<!-- <span class="inline-block">Photographie</span> -->
+						</div>
+					</div>
+					<!-- <div class="author w-48">
+						<div class="align-text-bottom text-xs">
+							<span class="inline-block font-extrabold">César Greppin</span><br>
+							<span class="inline-block">Format web</span>
+						</div>
+					</div> -->
+				</div>
+				<h2 class="text-xl md:text-2xl mt-6 md:mt-10">
+					Alors que Genève, Lausanne ou encore Zurich s’essaient au cannabis, nous avons pu pénétrer les murs ultra-sécurisés de la société Green Brothers, important grossiste d’herbe avec ou sans THC. Un or vert synonyme d’un juteux business en pleine expansion qui permet à l’entreprise dirigée par trois frères originaires de Lutry (VD) de faire sa place à l’international.
+				</h2>
+				<div class="container authors flex py-4 max-w-2xl border-slate-400 mt-2 md:mt-6">
+					<div class="flex items-center mr-2">
+						<div class="align-text-bottom text-xs">
+							<span class="inline-block font-extrabold uppercase">Partager</span>
+						</div>
+					</div>
+					<div class="mx-1">
+						<a target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.prod.storytelling.blick.ch/fr/drug-checking-comment-les-fetards-font-tester-leur-drogue-a-geneve/&amp;display=popup&amp;ref=plugin&amp;src=share_button" class="flex items-center">
+							<img src="img/icon-facebook-b.svg" alt="Icône de partage facebook" class="rounded-full">
+						</a>
+					</div>
+					<div class="mx-1">
+						<a target="_blank" href="https://twitter.com/intent/tweet?text=Pour la première fois, un consommateur, un drug-checking et le labo toxicologique des Hôpitaux universitaires de Genève ont laissé un journaliste suivre des échantillons de MDMA et de coke à la trace. https://www.prod.storytelling.blick.ch/fr/drug-checking-comment-les-fetards-font-tester-leur-drogue-a-geneve/%20&amp;via=blick_fr" class="flex items-center">
+							<img src="img/icon-twitter-b.svg" alt="Icône de partage twitter" class="rounded-full">
+						</a>
+					</div>
+					<div class="mx-1">
+						<a target="_blank" href="whatsapp://send?text=Voici comment les fêtards genevois font tester leur drogue%0A%0Ahttps://www.prod.storytelling.blick.ch/fr/drug-checking-comment-les-fetards-font-tester-leur-drogue-a-geneve/" class="flex items-center">
+							<img src="img/icon-wa-b.svg" alt="Icône de partage WhatsApp" class="rounded-full">
+						</a>
+					</div>
+					<div class="mx-1">
+						<a target="_blank" href="mailto:?subject=Format spécial Blick.ch :&nbsp;Voici comment les fêtards genevois font tester leur drogue&amp;body=Voici comment les fêtards genevois font tester leur drogue%0A%0APour la première fois, un consommateur, un drug-checking et le labo toxicologique des Hôpitaux universitaires de Genève ont laissé un journaliste suivre des échantillons de MDMA et de coke à la trace.%0A%0Ahttps://www.prod.storytelling.blick.ch/fr/drug-checking-comment-les-fetards-font-tester-leur-drogue-a-geneve/" class="flex items-center">
+							<img src="img/icon-plane-b.svg" alt="Icône de partage email" class="rounded-full">
+						</a>
+					</div>
+					<div class="mx-1">
+						<span class="copy flex items-center cursor-pointer">
+							<img src="img/icon-link-b.svg" alt="Icône de partage lien" class="rounded-full">
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- <div class="hero max-w-screen-2xl mx-auto">
+
+		</div> -->
+
+		
+	
+		
+		
+
+		
+
+		<div class="container max-w-screen-2xl px-4 relative bg-white">
+			
+<script async src="//www.instagram.com/embed.js"></script>
+			<div id="title0" class="chapeau container py-4 max-w-2xl">
+				<!-- <h2 class="text-xl md:text-2xl mt-2 md:mt-12">
+					Le nouvel Espace de consommation sécurisé de la Riponne est censé mettre un frein à la prise de drogues dans les rues lausannoises, à la vue de tous. Blick a passé une soirée avec celles et ceux que la vie a fait échouer dans la dope, et puis ceux qui les aident. Reportage.
+				</h2> -->
+			</div>            
+			<!-- <div id="chart"></div> -->
+			<div class="container mt-2 md:mt-8 max-w-2xl">
+				<p class="lettrine text-lg font-light mb-6">
+					Malgré l’odeur entêtante et caractéristique de cacahuète grillée qui saisit les narines, nous ne nous trouvons pas chez des babas voulant faire l’amour à la lune après la taffe de trop. Derrière les épais murs de ce bâtiment gris foncé aux allures de forteresse, en zone industrielle à Carrouge, dans les hauteurs de Lausanne, on compte autant d’élégantes vestes de costume que de hoodies plus décontractés. Ce vendredi 31 janvier, une bonne vingtaine d’employés – pour la plupart jeunes – sont présents lors de notre visite. Ils alternent les debout-assis derrière leur bureau électrique dernier cri et croquent à pleines dents des fruits frais offerts par leur employeur à la cafétéria, où trône un majestueux jeu d’échecs. De toutes parts, de vastes espaces communs aux couleurs claires habillés de meubles et de luminaires design. Et même une salle de sport chichement équipée, qui a néanmoins le mérite d’exister.
+				</p>
+
+				<!-- DOUBLE -->
+				<figure class="-mx-0 lg:-mx-32 xl:-mx-64 pt-4 pb-6">
+					<div class="grid gap-4 md:grid-cols-2">
+						<div class="">
+							<img src="img/this/ch1-reunion-2.jpg" alt="Les cahiers de sébastien, sous l'emprise de la drogue">
+							<figcaption class="py-2 text-xs">Le jour de notre visite, Herminien Porta (au centre) mène une séance avec tous les vendeurs de Green Brothers.</figcaption>
+						</div>
+						<div class="">
+							<img src="img/this/ch1-reunion-zoom.jpg" alt="Les cahiers de sébastien, sous l'emprise de la drogue">
+							<figcaption class="py-2 text-xs">La majorité des collaborateurs participent au meeting à distance. Ici, comme dans n'importe quelle start-up, tout le monde est connecté.</figcaption>
+						</div>
+					</div>
+					<!-- <figcaption class="py-2 text-xs">Image 1: Jeanne enregistre les usagers, sous leur blase (tout est anonyme ici), au fur et à mesure qu’ils arrivent. Image 2: elle doit aussi indiquer, pour les statistiques, ce qu’ils comptent consommer et comment (voir les catégories de produits et d’usages ci-dessus).</figcaption> -->
+				</figure>
+				
+			</div>
+			
+			
+	
+			<!-- <div class="container mt-8 max-w-2xl relative">
+				<figure class="encadre mx-auto mb-6 sm:w-4/5 lg:absolute lg:-right-28 lg:w-80 xl:-right-60 px-4 md:px-8 py-8 bg-yellow-100 relative">
+					<img src="img/this/icon-info.svg" alt="" class="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2">
+					<p class="text-sm md:text-base mb-4 md:mb-6">
+						<span class="font-bold">L’Espace de consommation sécurisé de la Riponne</span>, géré par la Fondation ABS, a ouvert le 27 mai 2024.
+					</p>
+					<p class="text-sm md:text-base mb-4 md:mb-6">
+						C’est un projet pilote lancé par la Ville de Lausanne, qui fait l’objet d’une évaluation sur un an, via Unisanté. Il est le pendant citadin du même lieu, qui existe depuis 2018 au Vallon, dans les hauts de Lausanne. Et il dénombre déjà entre 150 et 200 visites par ouverture (en comptant les gens qui viennent plusieurs fois).
+					</p>
+					<p class="text-sm md:text-base">
+						À l’origine de cette initiative? Une volonté de la Ville d’apaiser cette fameuse place de la Riponne, connue pour son Palais de Rumine, ses bars, mais aussi pour ses badauds qui font la manche, visiblement enclins aux paradis artificiels.
+					</p>
+				</figure>
+
+				<p class="text-lg font-light mb-6 lg:w-3/5 xl:w-4/5">
+					Nous arrivons sur place une demi-heure avant l’ouverture des portes. Stéphane, employé de la structure, marmonne dans sa longue barbe blanche: «Je sens qu’ils vont être un peu surexcités, nos usagers, ce soir, entre l’animation juste devant le local, et la présence de la presse…» Dehors, devant l’entrée, la Fßête de la musique — coïncidence du calendrier — bat son plein, et va donner un peu de fil à retordre aux cinq intervenants sociosanitaires qui sont de garde aujourd’hui, jusqu’à la fermeture, à 21h30.
+				</p> 
+
+
+				<figure class="pt-4 pb-6 lg:w-3/5 xl:w-4/5">
+						<div class="">
+							<img src="img/this/_intro_exterieur.jpg" alt="Au mur, de l’humour et de la prévention sur fond acidulé">
+							<figcaption class="py-2 text-xs">Pour compléter la mission de l’Espace de consommation de la Riponne, la Fondation ABS dépêche aussi des travailleurs sociosanitaires de rue. Leur mission: simplement aller discuter avec les personnes, éventuellement les diriger vers des structures adéquates selon leur situation, et leur donner du matériel médical pour leurs éventuels «petits bobos», par exemple.</figcaption>
+						</div>
+				</figure>
+				
+			</div> -->
+
+			<div class="container max-w-2xl relative">
+
+				<p class="text-lg font-light mb-6 lg:w-3/5">
+					On se croirait dans n’importe quelle start-up en vogue. Sauf qu’ici, contrairement aux campus de l’Arc lémanique, la jeune pousse ne court pas après l’intelligence artificielle, mais négocie, transforme et oriente des montagnes d’or vert sur toute la surface du globe. Une marchandise précieuse qui se fume, s’avale ou s’applique sur la peau: du CBD. Trois lettres pour cannabidiol, l’un des composants majeurs de la plante de chanvre qui, si elle compte moins de 1% de THC (la substance responsable des effets psychotropes), est légale en Suisse.
+				</p>
+
+				<figure class="md:absolute top-1/2 md:-translate-y-1/2 left-3/4 md:w-48 md:mb-6">
+					<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DFhberJMErU/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DFhberJMErU/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Voir cette publication sur Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DFhberJMErU/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Une publication partagée par Blick | fr (@blick_fr)</a></p></div></blockquote>
+				</figure>
+
+				<p class="text-lg font-light mb-6 lg:w-3/5">
+					Green Brothers ne se contente pas de cette branche qui a connu son eldorado il y a une petite dizaine d’années, lorsque des boutiques spécialisées ont commencé à fleurir sous nos latitudes. Avec les salles blanches de son partenaire Pharmaserv qui opère dans la région de Lucerne, l’entreprise a aussi flairé le potentiel du cannabis médical – contenant du THC – à destination des pharmacies et des personnes souffrant, par exemple, d’un cancer ou d’une sclérose en plaques.
+				</p>
+			</div>
+
+			<div class="container max-w-2xl ">
+				
+				
+
+				<p class="text-lg font-light mb-6 ">
+					Un business controversé qui s’agrandit par ailleurs à chaque pas fait par les autorités en direction d’une éventuelle légalisation de la consommation récréative de cette drogue qualifiée de douce, actuellement à l’étude dans certaines villes comme Genève, Lausanne ou Zurich. Quoi qu’il en soit, le «vrai» cannabis est en forte expansion et viendra assurément doper les plus de 20 millions de francs de chiffre d’affaires déclarés en 2024 par Green Brothers.
+				</p>
+
+				<figure class="float-right pt-4 pb-6 -mx-0 lg:-mx-32 xl:-mx-64">
+					<div class="container">
+						<div class="w-full">
+							<img src="img/this/ch1-corridors.jpg" alt="Au mur, de l’humour et de la prévention sur fond acidulé">
+							<figcaption class="py-2 text-xs">Les espaces communs sont vastes et clairs. Côté décoration, rien ne rappelle le cannabis, à part le nom des salles de réunions.</figcaption>
+						</div>
+					</div>
+				</figure>
+			</div>
+
+			<div class="container max-w-2xl">
+				<p class="text-lg font-light mb-6">
+					Un montant impressionnant qui fait figurer l’entité des frères Porta, Herminien, 35 ans, Cyril, 34 ans, et Arnaud, 29 ans, parmi les acteurs de la weed les plus importants du pays et même du continent. «Au total, nous avons 12'000 clients professionnels et 100'000 clients particuliers que nous distribuons dans une trentaine de pays», glisse Arnaud, avant d’avaler d’un trait son expresso.
+				</p>
+
+				<div class="color bg-yellow-100 rounded-2xl md:pl-48 px-8 pt-8 md:pt-6 pb-6 mt-20 md:mt-0 mb-6 md:mb-10 -mx-0 lg:-mx-32 xl:-mx-64 relative">
+					<div class="absolute top-0 md:top-10 -translate-y-3/4 md:translate-y-0 left-12 -translate-x-1/2 md:translate-x-0 md:left-6 w-24 md:w-40">
+						<img class="w-full" src="img/this/weed-icon.png" alt="">
+					</div>
+					<div>
+						<div class="encart-header mb-4">
+							<!-- <p class="font-light opacity-50 mb-3">À propos du cannabis médical</p> -->
+							<p class="text-xl font-semibold underline decoration-2">La Suisse teste la fumette</p>
+						</div>
+						<div class="encart-body mb-4">
+							<p class="mb-4">En Suisse, comme dans beaucoup d’autres pays, il est interdit de cultiver, d’importer, de fabriquer ou de vendre du cannabis, rappelle la Confédération <a href="https://www.bag.admin.ch/bag/fr/home/gesund-leben/sucht-und-gesundheit/cannabis/pilotprojekte.html" target="_blank" class="font-semibold underline decoration-2">sur son site Internet</a>. C’est un fait. Néanmoins, vous ne tomberez pas de votre chaise si on vous dit que malgré cette interdiction<span><span class="encart-tohide">...</span></span><span class="encart-hidden">, la consommation de cette drogue est répandue, que le marché noir prospère et que la sécurité des consommateurs n’est pas garantie. D’après les chiffres officiels, plus d’un tiers de la population aurait déjà essayé une fois de se défoncer avec du cannabis, 4% en aurait consommé au cours du dernier mois, et 1,1% en ferait un usage problématique.</span>
+							</p>
+							<p class="encart-hidden mb-4">Face à cette situation jugée insatisfaisante par les autorités, le Parlement a décidé d’aménager le cadre légal en 2020 pour une durée limitée à dix ans. Conséquence: depuis l’année suivante, la réalisation d’essais pilotes portant sur la consommation non médicale de cannabis par des adultes est autorisée. L’objectif de cette démarche est de fournir une base scientifique approfondie pour d’éventuelles décisions sur la manière d’organiser la réglementation de la substance.
+							</p>
+							<p class="encart-hidden">Preuve que la problématique est bien réelle, toutes les grandes villes du pays se sont déclarées intéressées. En clair, les divers organisateurs remettent — ou prévoient de remettre — du cannabis via différents canaux de distribution. Par exemple dans des pharmacies, dans des social clubs et dans des magasins à but non lucratif. Aujourd’hui, Genève, Lausanne, Bâle ou encore Zurich font leurs expérimentations. Des premiers pas prudent en vue d’une légalisation, comme dans de plus en plus de pays à l’instar du Canada? 
+							</p>
+						</div>
+						<span id="btn-encart" class="font-semibold underline decoration-2 cursor-pointer">Lire plus</span>
+						<!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum consequatur explicabo, alias quisquam adipisci dicta minus vel, molestias consectetur suscipit, reprehenderit quibusdam reiciendis! Earum dicta laboriosam temporibus id quibusdam delectus.</p> -->
+					</div>
+				</div>
+
+				<!-- <figure class="float-right pt-4 pb-6 -mx-0 lg:-mx-32 xl:-mx-64">
+					<div class="relative">
+						<img src="img/this/title-how-to.jpg" alt="">
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot1 tooltip" title="<b class='font-semibold'>Le crack par inhalation</b><br>Un simple couteau, qui sert à mélanger la bicarbonate de sodium, la poudre de cocaïne et de l’eau dans la cuillère adjacente."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot2 tooltip" title="<b class='font-semibold'>Le crack par inhalation</b><br>Une cuillère, dans le creux de laquelle on mélange la bicarbonate de sodium, la poudre de cocaïne et de l’eau, le tout en chauffant la cuillère avec un briquet placé en dessous. Procédé qui donne le crack à fumer. "> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot3 tooltip" title="<b class='font-semibold'>Le crack par inhalation</b><br>Une grande et une petite pipe à crack, par laquelle on aspire (en général depuis une bouteille en pet, par exemple)."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot4 tooltip" title="<b class='font-semibold'>Le crack par inhalation</b><br>L’embout de la pipe à crack."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot5 tooltip" title="<b class='font-semibold'>Le crack par inhalation</b><br>L’eau douce, qui sera mélangée à la bicarbonate de sodium et la poudre de cocaïne."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot6 tooltip" title="<b class='font-semibold'>Le crack par inhalation</b><br>La bicarbonate de sodium."> 
+
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot7 tooltip" title="<b class='font-semibold'>Le crack par injection</b><br>Un récipient à mélange, que les personnes qui se piquent utilisent plus volontiers qu’une cuillère, en chauffant le récipient avec un briquet placé en dessous."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot8 tooltip" title="<b class='font-semibold'>Le crack par injection</b><br>De l’eau douce."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot9 tooltip" title="<b class='font-semibold'>Le crack par injection</b><br>Des lingettes désinfectantes, une pour avant et une pour après l’injection."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot10 tooltip" title="<b class='font-semibold'>Le crack par injection</b><br>Une seringue."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot11 tooltip" title="<b class='font-semibold'>Le crack par injection</b><br>Une aiguille."> 
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot12 tooltip" title="<b class='font-semibold'>Le crack par injection</b><br>Des mouchoirs (en cas de saignements après l’injection)."> 
+
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot13 tooltip" title="<b class='font-semibold'>Le crack sniffé</b><br>Des feuilles à sniff, pour en faire des pailles que l’on met dans le nez.">
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot14 tooltip" title="<b class='font-semibold'>Le crack sniffé</b><br>De l’eau douce, pour se nettoyer le nez avant la prise.">
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot15 tooltip" title="<b class='font-semibold'>Le crack sniffé</b><br>Une paille (toute faite cette fois, une alternative aux feuilles à sniff).">
+
+						<img src="img/this/hotspot.svg" alt="" class="absolute hotspot is-animated hotspot16 tooltip" title="<b class='font-semibold'>L’héroïne par inhalation</b><br>Des feuilles d’aluminium, qui servent à fumer l’héroïne. La première sert de réceptacle au liquide préalablement préparé (l’héroïne), la seconde sert de pipe."> 
+					</div>
+					
+					<figcaption class="py-2 text-xs">Un exemple du matériel qu’on trouve à l’Espace de consommation de la Riponne, et comment il est utilisé. Nous avons détaillé quatre des modes de consommation les plus fréquents, pour deux des drogues les plus populaires auprès des usagères et usagers. </figcaption>
+				</figure> -->
+
+				<p class="text-lg font-light mb-16 md:mb-20">
+					Installé dans la salle de conférences baptisée Indica, du nom du chanvre indien, le chaleureux pas encore trentenaire revient sur l’épopée entrepreneuriale familiale. «A ce jour, notre groupe emploie une centaine de personnes réparties au sein de 19 sociétés aux quatre coins du monde, liste-t-il. Mais au tout début, nous n’étions que les trois à gesticuler dans la cave de notre mère, à Lutry (VD).»
+				</p>
+
+				
+
+			</div>
+
+			
+			<figure class="w-auto -mx-4 relative">
+				<img src="img/this/gb_0532.jpg" alt="">
+				
+				<figcaption class="py-2 px-4 text-xs mb-6">Au rez-de-chaussée des locaux de Green Brothers, les fleurs de CBD importées des quatre coins du monde sont calibrées avant d'être conditionnées.</figcaption>
+			</figure>
+
+			
+				
+			
+			<div class="container mt-8 max-w-2xl">
+
+				<div class="text-3xl md:text-4xl font-extrabold py-6 border-y border-slate-400 mt-8 md:mt-16 mb-8 md:mb-12">
+					Du cannabis à la place des vaches 
+				</div>
+
+				<p class="lettrine text-lg font-light mb-6">
+					Cette histoire, qui rappelle non sans délice la série Family Business dans laquelle l’acteur français Jonathan Cohen veut transformer la boucherie casher de son père en coffee shop, commence en 2016. Notre interlocuteur, qui ne cache pas s’être essayé à la fumette avant que des offres légales n’apparaissent sur le marché, «comme beaucoup d’adolescents», raconte pourquoi le CBD semblait un bon pari.
+				</p>
+
+				<figure class="pt-4 mx-0 pb-6">
+					<div class="container">
+						<div class="w-full">
+							<img src="img/this/ch2-masque-zoom.jpg" alt="Au mur, de l’humour et de la prévention sur fond acidulé">
+							<!-- <figcaption class="py-2 text-xs">Annelore allume le bong et s’apprête à s’envoler vers son paradis artificiel. </figcaption> -->
+						</div>
+					</div>
+				</figure>
+
+				<p class="text-lg font-light mb-6">
+					«Nous sommes descendants d’agriculteurs et avons la chance d’avoir une ferme familiale dans le canton de Fribourg, reprend Arnaud. Nous avons fait des recherches génétiques, en passant des Etats-Unis à Israël, pour obtenir des plants qui respectent le cadre légal et fait nos premiers tests. Comme ceux-ci étaient concluants, nous avons utilisé certaines de nos terres d’abord dévolues aux céréales ou à l’élevage bovin pour nos nouvelles cultures qui étaient alors parfois sujettes à polémiques.»
+				</p>
+
+				
+
+			
+
+				<!-- DOUBLE -->
+				<figure class="-mx-0 lg:-mx-32 xl:-mx-64 pt-4 pb-6">
+					<div class="grid gap-4 md:grid-cols-2">
+						<div class="">
+							<img src="img/this/ch2_huile_fab1.jpg" alt="Les cahiers de sébastien, sous l'emprise de la drogue">
+							<figcaption class="py-2 text-xs">Dans la partie laboratoire du bâtiment de Carrouge, Arnaud Porta, diplômé en biologie de l'Université de Lausanne (UNIL), aide un collaborateur à réaliser une huile de CBD.</figcaption>
+						</div>
+						<div class="">
+							<img src="img/this/ch2_huile_fab2.jpg" alt="Les cahiers de sébastien, sous l'emprise de la drogue">
+							<figcaption class="py-2 text-xs">Chaque geste et chaque mesure compte. Arnaud Porta connaît ses outils et veille au grain.</figcaption>
+						</div>
+					</div>
+					<!-- <figcaption class="py-2 text-xs">Image 1: Jeanne enregistre les usagers, sous leur blase (tout est anonyme ici), au fur et à mesure qu’ils arrivent. Image 2: elle doit aussi indiquer, pour les statistiques, ce qu’ils comptent consommer et comment (voir les catégories de produits et d’usages ci-dessus).</figcaption> -->
+				</figure>
+
+				<p class="text-lg font-light mb-6">
+					Problème de taille: entre le moment où la fratrie sème et récolte, le prix du CBD s’effondre en Suisse, passant d’environ 6000 à 1000 francs le kilo. «On a très vite compris que nous ne pourrions pas rivaliser avec la concurrence étrangère en termes de production et nous nous sommes concentrés sur notre savoir-faire, enchaîne celui qui est diplômé en biologie de l’Université de Lausanne. Comme nous avions réussi à développer des plantes avec moins de 0,2% de THC, nous pouvions profiter de notre expertise pour nous lancer dans le marché européen, beaucoup plus restrictif. S’y lancer en tant que grossiste avec une rigueur tout helvétique, c’est ce qui nous a réussi.»
+
+				</p>
+				
+
+				<figure class="float-right pt-4 pb-6 -mx-0 lg:-mx-32 xl:-mx-64">
+					<div class="container">
+						<div class="w-full">
+							<img src="img/this/ch2_huile_box.jpg" alt="Au mur, de l’humour et de la prévention sur fond acidulé">
+							<figcaption class="py-2 text-xs">Les produits de Green Brothers, ici de l'huile de CBD, sont distribués dans une trentaine de pays.</figcaption>
+						</div>
+					</div>
+				</figure>
+
+				<p class="text-lg font-light mb-16 md:mb-20">
+					Dès 2017, Green Brothers ouvre une antenne au Luxembourg. «L’idée était d’abord de réduire les frontières à franchir pour limiter les frais et les tracasseries», souffle Arnaud. Il éclate de rire: «Je vous laisse imaginer la tête des douaniers lorsqu’ils ouvraient des camions contenant des centaines de kilos de notre cannabis! Il a fallu faire preuve de beaucoup de pédagogie et de patience. Actuellement, nous sommes très proactifs dans nos liens avec les différentes autorités à travers le monde et tout se passe bien. Mais il n’en a pas toujours été ainsi quand les agents sur le terrain étaient à peine au courant des dernières lois.»
+
+				</p>
+
+				
+
+				<!-- DOUBLE -->
+				<!-- <figure class="-mx-0 lg:-mx-32 xl:-mx-64 pt-4 pb-6">
+					<div class="grid gap-4 md:grid-cols-2">
+						<div class="">
+							<img src="img/this/_ch_1_table_sniff.jpg" alt="Les cahiers de sébastien, sous l'emprise de la drogue">
+						</div>
+						<div class="">
+							<img src="img/this/_ch_1_cabine.jpg" alt="Les cahiers de sébastien, sous l'emprise de la drogue">
+						</div>
+					</div>
+					<figcaption class="py-2 text-xs">Image 1: les tables mises à disposition des personnes qui consomment par injection. Image 2: Une «salle de fume», comme on dit parfois ici. A droite, un des chariots qui contient le matériel. On donne, à l’entrée, un ticket avec un numéro, qui permettra, une fois à l’intérieur, d’accéder au matériel adéquat. </figcaption>
+				</figure> -->
+
+				<!-- <figure class="float-right">
+					<div class="container py-4">
+						<div class="w-full">
+							<img src="img/this/bobos.jpg" alt="Au mur, de l’humour et de la prévention sur fond acidulé">
+							<figcaption class="py-2 text-xs">Au mur, de l’humour et de la prévention sur fond acidulé.</figcaption>
+						</div>
+					</div>
+				</figure> -->
+
+				<!-- <figure class="mx-auto  mx-auto pt-4 pb-6">
+					<div class="card">
+						<div class="front" style="background-image:url('img/this/_alison1.jpg'); background-size:cover;">
+							<div class="card-labels absolute z-10 top-7 w-full">
+								<span class="card-label1 block text-3xl md:text-4xl leading-none text-white antialiased font-semibold mb-1">Alison, 33 ans</span>
+								<span class="card-label2 block text-lg md:text-xl leading-none text-white antialiased font-sans text-light">Consomme depuis 16 ans</span>
+							</div>
+							<button class="absolute bottom-7 right-7 rounded-full text-lg  bg-yellow-200 hover:bg-yellow-300 px-6 py-3"><span class="block float-left mr-2">Sa confidence</span><img src="img/this/arrow.svg" alt="" class="mt-1.5"></button>
+						</div>
+						<div class="back bg-yellow-200">
+							<p class="absolute top-7 right-7 bottom-7 left-7 italic text-left text-md">
+								«C’est ma mère qui m’a fait essayer l'héroïne pour la première fois, ici, à la place de la Riponne, quand j’avais 17 ans… Peu après, j’ai eu un gosse. L’État me l’a retiré, bien sûr. Ça m’a fait un tel choc que, pendant un moment, j’ai réussi à tout arrêter, à l’âge de 23 ans. J’étais sous <span class="font-bold underline tooltip" title="ndlr: substitut médical pour stopper la prise d’héroïne">méthadone</span>. J’ai eu deux autres enfants, avec un autre homme. Puis on s’est séparés, et c’était violent.<br><br>Il a été dire aux autorités que je suis une toxicodépendante en rémission, pour qu’on m’enlève la garde de mes deux derniers. Ça a fonctionné, et ça m’a vraiment détruite. J’ai replongé. J’ai commencé à me piquer. Mais j’ai encore l’espoir de m’en sortir, de récupérer mes enfants.»
+							</p>
+							<button class="absolute -top-3 -right-3 rounded-full text-lg  text-yellow-200 bg-black hover:bg-gray-600 px-6 py-6"><img src="img/this/cross.svg" alt="" class="absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2"></button>
+						</div>
+					</div>
+				</figure> -->
+
+				<!-- <figure class="mx-auto  mx-auto pt-4 pb-6">
+					<div class="card">
+						<div class="front" style="background-image:url('img/this/_bob1.jpg'); background-size:cover;">
+							<div class="card-labels absolute z-10 top-7 w-full">
+								<span class="card-label1 block text-3xl md:text-4xl leading-none text-white antialiased font-semibold mb-1">Bob, 57 ans</span>
+								<span class="card-label2 block text-lg md:text-xl leading-none text-white antialiased font-sans text-light">Consomme depuis 37 ans</span>
+							</div>
+							<button class="absolute bottom-7 right-7 rounded-full text-lg  bg-yellow-200 hover:bg-yellow-300 px-6 py-3"><span class="block float-left mr-2">Sa confidence</span><img src="img/this/arrow.svg" alt="" class="mt-1.5"></button>
+						</div>
+						<div class="back bg-yellow-200">
+							<p class="absolute top-7 right-7 bottom-7 left-7 italic text-left text-md">
+								«J’ai commencé l’héroïne il y a trois décennies. Depuis, j’ai arrêté quelques fois. Aujourd’hui, je suis suivi médicalement, je reçois ce qu’il me faut à la pharmacie. Si je viens ici, c’est seulement quand j’ai dû dépanner un pote, et que j’en ai plus assez pour moi — donc je dois racheter dans la rue. Sinon, je consomme chez moi, j’ai la chance d’avoir un appart.<br><br>Je suis un vieux, moi, j’ai plus l’âge pour la rue! Vous savez, au siècle passé, le monde de la drogue, c’était autre chose: la Platzspitz de Zurich, ou la plus grande scène ouverte de la drogue, j’y étais. Tout était dégueulasse, les gens étaient assommés par terre. On ne savait pas s'ils étaient morts ou vivants, parfois.» 
+							</p>
+							<button class="absolute -top-3 -right-3 rounded-full text-lg  text-yellow-200 bg-black hover:bg-gray-600 px-6 py-6"><img src="img/this/cross.svg" alt="" class="absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2"></button>
+						</div>
+					</div>
+				</figure> -->
+
+				
+
+				
+
+				
+
+			</div>
+
+			
+			<figure class="w-auto -mx-4 relative">
+				<img src="img/this/gb_0824.jpg" alt="">
+				<figcaption class="py-2 px-4 text-xs mb-6">Arnaud Porta est comme un poisson dans l'eau dans les impressionnants stocks de l'entreprise qu'il dirige avec ses deux frères.</figcaption>
+			</figure>
+				
+			
+			<div class="container mt-8 max-w-2xl">
+
+				<div class="text-3xl md:text-4xl font-extrabold py-6 border-y border-slate-400 mt-8 md:mt-16 mb-8 md:mb-12">
+					L'or vert à la conquête du monde
+				</div>
+			</div>
+			
+			<div class="container mt-8 max-w-2xl relative overflow-auto">
+
+				
+
+				<p class="lettrine text-lg font-light mb-6">
+					Aujourd’hui, Green Brothers a ouvert des hubs en Amérique, en Croatie et même au Japon. Une success-story qui ne montre aucun signe d’essoufflement: «L’international, c’est notre quotidien. On est très rarement en Suisse, car on passe notre temps à structurer notre expansion à l’étranger, en plus de consolider nos bases existantes. Notre travail est surtout d’exporter notre rigueur et notre savoir-faire hors de nos frontières. Cette dynamique s’accompagne aussi de partenariats stratégiques, comme notre récente exclusivité avec Cookies, la marque iconique californienne de cannabis. Pour donner une image, c’est comme si une entreprise américaine obtenait la distribution exclusive d’une marque de montres suisses légendaire pour le marché américain.»
+
+				</p>	
+				
+				<figure class="pt-4 pb-6 mx-auto w-7/12">
+					<div class="container">
+						<div class="w-full">
+							<img src="img/this/ch3-cookie.jpg" alt="Au mur, de l’humour et de la prévention sur fond acidulé">
+							<figcaption class="py-2 text-xs">Green Brothers est très fier de sa collaboration avec Cookies, une marque iconique de cannabis californienne.</figcaption>
+						</div>
+					</div>
+				</figure>
+				
+				
+
+				<p class="text-lg font-light mb-6">
+					Arnaud Porta assure que travailler avec ses aînés ne complique pas les choses. Bien au contraire. «Nous sommes très complémentaires et je pense même qu’il y a moins de tensions entre nous qu’entre les dirigeants d’une firme qui ne partageraient pas de liens émotionnels et de sang, assure-t-il. Notre famille, c’est la clé. Nous n’avons ni dette, ni investisseur. Ce qui signifie que nous avons notre destin entre nos mains.» Lucide, le Vaudois souligne aussi à quel point s’entourer de collaborateurs de confiance et de qualité a été essentiel dans l’ascension de «la grande famille» Green Brothers. «La plaque de chocolat suisse que nous glissons dans les cartons de nos bons clients doit aussi sûrement jouer un rôle», sourit-il. 
+
+				</p>
+
+				<!-- COLONNE -->
+				<figure class="float-right pt-4 pb-6 mb-8 md:mb-24">
+					<div class="container">
+						<div class="w-full">
+							<img src="img/this/ch3_end.jpg" alt="Au mur, de l’humour et de la prévention sur fond acidulé">
+							<figcaption class="py-2 text-xs">Cyril (à gauche), Arnaud et Herminien Porta visent plus que jamais l'international, notamment avec leurs hubs aux Etats-Unis, en Croatie ou encore au Japon.</figcaption>
+						</div>
+					</div>
+				</figure>
+
+			</div>
+
+		</div>
+
+		<div class="container max-w-screen-2xl px-4 relative bg-yellow-100 overflow-auto">
+			
+			<div class="container max-w-2xl">
+				<hr class="mb-16 md:mb-36 -mx-0 lg:-mx-32 xl:-mx-64">
+				<div class="booba -mx-0 lg:-mx-32 xl:-mx-64 rounded-xl mb-8 md:mb-24">
+					<figure class="">
+						<div class="bg-yellow-100">
+							<img src="img/this/booba.jpg" alt="" class="rounded-xl">
+						</div>
+					</figure>
+					
+					<div class="booba-text">
+						<span class="bg-yellow-100">Booba deale avec<br>Green Brothers</span>
+						<p class=" text-normal md:text-lg font-light mb-6">
+							Si vous étiez devant la Grande Scène de Paléo l’été dernier pour assister au – très mauvais – concert du rappeur français Booba, alors peut-être que vous avez déjà entendu le nom de Green Brothers. Lors de sa performance d’une heure durant laquelle il a davantage clashé ses ennemis que chanté ses morceaux, l’artiste aux nombreux tubes a salué ses nouveaux partenaires vaudois.
+						</p>
+						<p class=" text-normal md:text-lg font-light mb-6">
+							«Nous étions avec lui au festival, derrière la scène, dans les coulisses, c’était très impressionnant», se souvient Arnaud Porta. L’objectif de cette soirée était de sceller dans un moment léger leur accord commercial. «Nous avons l’exclusivité pour la distribution en Suisse et en Europe de sa marque de CBD, PRT LAB», détaille l’entrepreneur.
+						</p>
+						<p class=" text-normal md:text-lg font-light mb-6">
+							Une simple étape de plus pour Elie Yaffa, le vrai nom du Duc de Boulogne aujourd’hui installé à Miami, qui fait aussi du commerce dans l’alcool et les vêtements. «Ce qui nous intéresse, ce n’est pas que la défonce, affirmait-il en juin à Newsweed, un média spécialisé français. Moi, j’aime bien fumer, mais j’aime bien rester actif. Je suis un businessman. J’ai une famille. Je fais beaucoup de sport. Je veux pouvoir rester actif.»
+						</p>
+						<p class=" text-normal md:text-lg font-light mb-6">
+							Arnaud Porta est convaincu par les qualités des produits en question, dont il pourrait parler des heures. Tout comme de sa rencontre avec Booba: «Nous sommes allés en loge avant et après le concert pour finaliser des discussions, mais n’avons pas fait d’after mémorable qui mériterait d’être racontée», glisse-t-il dans un haussement d’épaules.
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<div class="container max-w-screen-2xl px-4 relative bg-white">
+
+			
+				
+		
+				<!-- <div class="font-extrabold uppercase py-6 border-y border-slate-400 mt-8 md:mt-16 mb-8 md:mb-12">
+					Double peine pour les femmes?
+				</div> -->
+
+				
+
+		
+	
+	
+			
+			<div class="container max-w-2xl pt-12">
+
+				
+
+				<!-- <p class="mb-16 md:mb-20">
+					&nbsp;
+				</p>  -->
+
+				<span class="mt-4 block p-4 italic bg-gray-50 border-2 border-gray-100 text-sm mb-12">Cet article a été publié initialement <a href="https://www.illustre.ch/" target="_blank" class="underline font-semibold decoration-2">dans le n°06 de L'illustré</a>, paru en kiosque le 06 février 2025.</span>
+
+				{{ block('credits') }} 
+
+				<div class="spacer h-16 md:h-36"></div>
+
+			</div>
+		</div>
+		
+		
+
+		
+
+		
+		
+		
+		
+
+		
+
+		<footer class="container max-w-screen-2xl relative bg-slate-200">   
+			{{ block('footer_logo') }} 
+			<!-- <div class="bg-white px-4">
+				{{ block('other_teasers') }} 
+			</div> -->
+			<div class="bg-gray-200 px-4">
+				{{ block('footer_menu') }} 
+			</div>
+		</footer> 
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+		{# <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> #}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+		<script src="js/counter-up.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> 
+		<!-- <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script> -->
+		
+		<!-- <script src="js/yt.js"></script> --> 
+		<script src="js/vendor/modernizr-3.11.2.min.js"></script> 
+		<!-- <script src="js/plugins.js"></script> -->
+		<script src="js/header.js"></script>
+		<!-- <script src="js/charts.js"></script> -->
+		<script src="js/main.js"></script>
+		{# <script src="js/intro.js"></script> #}
+		<!-- <script src="js/headroom.min.js"></script> -->
+		
+
+	</div>
+	</body>
+</html>

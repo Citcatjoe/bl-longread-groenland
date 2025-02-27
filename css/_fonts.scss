@@ -1,0 +1,236 @@
+@font-face {
+    font-family: 'GoodCondBlack';
+    src: url(https://storytelling.blick.ch/infografik/resources/fonts/Good/GoodW05-CondBlack.eot) format('eot');
+    src: local(☺︎), url(https://storytelling.blick.ch/infografik/resources/fonts/Good/GoodW05-CondBlack.woff) format('woff');
+    src: local(☺︎), url(https://storytelling.blick.ch/infografik/resources/fonts/Good/GoodW05-CondBlack.woff2) format('woff2');
+    src: local(☺︎), url(https://storytelling.blick.ch/infografik/resources/fonts/Good/GoodW05-CondBlack.ttf) format('truetype');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 800;
+    font-weight: bolder;
+}
+
+.font-sans
+{
+    font-family: Poppins !important;
+}
+.font-sans-2
+{
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+h1
+{
+    font-family: Poppins;
+    //font-size: 60px !important;
+    // text-shadow: 3px 6px 0 rgba(137 ,137 ,137 , 0.48);
+   
+    line-height: 50px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    span:last-child {
+        font-size: 65%;
+        line-height: 65%;
+    }
+    
+    @include breakpoint(min, medium) {
+        display: block;
+        //font-size: 100px !important;
+        line-height: 70px;
+        //text-shadow: 1px 1px 0 rgb(132, 132, 132);
+    };
+}
+
+h2 
+{
+    font-family: Poppins;
+    
+}
+
+
+.chapeau h2 {font-family: poppins;  }
+
+h3 
+{
+    font-family: Oswald;
+    font-size: 38px !important;
+    line-height: 60px;
+    text-shadow: 3px 6px 0 rgb(255, 255, 255);
+
+    @include breakpoint(min, medium) {
+        font-size: 68px !important;
+        line-height: 95px;
+        text-shadow: 3px 9px 0 rgb(255, 255, 255);
+    };
+    
+}
+
+
+// h3:before {
+//     content:'';
+//     position: absolute;
+//     width: 220px;
+//     height: 140px;
+//     margin: auto;
+//     z-index: -1;
+//     border: 5px solid lightgray;
+//     left:40px;
+// }
+
+
+
+h4
+{
+    font-family: Poppins;
+    
+}
+
+.tags
+{
+    font-family: Roboto Mono;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    .tag
+    {
+        //font-size: 20px;
+    }
+}
+
+h5
+{
+    font-family: Poppins;
+    
+}
+
+p
+{
+    font-family: poppins;
+}
+
+blockquote
+{
+    font-family: Poppins;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 22px; 
+    line-height: 1.15;
+    font-weight: 600;
+
+    @include breakpoint(min, medium) {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.3;
+    };
+
+    .auth
+    {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 600;
+        color: black;
+
+        @include breakpoint(min, medium) {
+            font-size: 18px;
+           
+        };
+    }
+}
+
+.poppins
+{
+    font-family: Poppins
+}
+
+
+.lettrine:first-letter
+{
+    
+    font-size: 570%;
+    font-weight: 600;
+    //border : 1px solid red;
+    float : left;
+    margin-top:5px;
+    line-height: 0.7;
+    margin-right: 10px;
+    
+}
+
+ul 
+{
+    font-family: Poppins;
+}
+
+.share
+{
+    font-family: poppins;
+}
+
+.chart-title
+{
+    font-family: 'GoodCondBlack', 'Arial Narrow', Impact, sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+figcaption
+{
+    font-family: Poppins;
+}
+
+.commandements
+{
+    position: relative;
+
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+
+    // li 
+    // {
+    //     flex-basis: calc(33.33% - 30px); /* Adjust the width as needed */
+    //     margin: 15px; /* Adjust the margin as needed for spacing */
+    //     text-align: center; /* Center the content if necessary */ 
+    // }
+
+    .commandements-nbr
+    {
+        //position: absolute;
+        // height: 100%;
+        // width: 50px;
+        // //top:-20px;
+        // margin-bottom: -20px;
+        // font-family: Poppins;
+        // font-weight: bold;
+        // font-size: 75px;
+        // font-style: italic;
+        // line-height: 50px;
+        font-size: 46px;
+        text-align: center;
+        border-radius: 100px;
+        margin-right: 20px;
+        width: 60px;
+        height: 60px;
+        line-height: 60px !important;
+        display: block;
+        background: #344766;
+        color: white;
+        float:left;
+    }
+
+    .commandements-txt
+    {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+#onetrust-consent-sdk h3,
+#ot-dpd-title,
+#ot-dpd-title
+{
+    font-size: inherit!important;
+}

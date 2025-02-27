@@ -1,0 +1,150 @@
+{% block image %}
+	<img src="img/this/chi.svg">
+{% endblock %} 
+
+{% block loading_overlay %}
+	<div class="fixed w-full h-full bg-white z-50">
+		<img src="https://storytelling.blick.ch/fr/__is_embed_somewhere/img/blick.svg" alt="Logo de Blick" class="w-64 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">  
+	</div>
+{% endblock %}
+
+{% block authors %}
+<div class="container flex py-4 max-w-2xl border-y">
+	<div class="author w-52">
+		{# <a target="_blank" href="https://www.blick.ch/fr/auteurs/gre-gory-beaud-journaliste-blick-id16519809.html" class="flex items-center"> #}
+		<span class="flex items-center">
+			<img src="https://storytelling.blick.ch/fr/__is_embed_somewhere/img/{{authors.writer.fname|replace({'é': 'e'})|lower}}-{{ authors.writer.lname|replace({' ': '-'})|lower }}.{{authors.writer.filetype}}" alt="Portrait de&nbsp;{{authors.writer.fname}}&nbsp;{{authors.writer.lname}}" class="rounded-full w-12 mr-2.5">
+			<div class="align-text-bottom text-xs">
+				Par <span class="inline-block font-extrabold">{% if authors.writer.url is defined and authors.writer.url is not empty %}<a href="{{authors.writer.url}}" target="_blank" class="underline">{% endif %}{{ authors.writer.fname ~ ' ' ~ authors.writer.lname }}{% if authors.writer.url is defined and authors.writer.url is not empty %}</a>{% endif %}</span>
+				<span class="inline-block">{{authors.writer.title}}</span>
+			</div>
+		</span>
+		{# </a> #}
+	</div>
+	<!-- <div class="author w-52">
+		<a href="" class="flex items-center">
+		<img src="https://storytelling.blick.ch/fr/__is_embed_somewhere/img/fabien-goubet.png" alt="Portrait de Fabien Goubet" class="rounded-full w-12 mr-2.5">
+		<div class="align-text-bottom text-xs">
+			Par <span class="inline-block font-extrabold underline">Fabien Goubet</span>
+			<span class="inline-block">Journaliste Blick</span></div>
+		</a>
+	</div> -->
+</div>
+{% endblock %}
+
+{% block scroller %}
+<div class="scroller text-center pt-0 md:pt-6 scale-75 md:scale-100 absolute left-1/2 -translate-x-1/2 invisible md:visible">
+	<div class="mouse"></div>
+</div>
+{% endblock %}
+
+{% block credits %}
+<hr class="mb-12">
+<div class="w-full mx-auto credits text-black text-lg bg-gray-50 border-2 border-gray-100 p-4">
+	{# <a href="https://www.blick.ch/fr/" target="_blank>"><img src="https://storytelling.blick.ch/fr/__is_embed_somewhere/img/blick.svg" alt="Logo de Blick" class="w-36 mb-8"></a> #}
+	<p class="mb-4"> 
+		<span class="font-light opacity-80">Production</span><br>
+		<span class="font-semibold">Blick Suisse romande</span>
+	</p> 
+	{% if authors.photos %}
+	<p class="mb-4">
+		<span class="font-light opacity-80">Images</span><br>
+		<span class="font-semibold">{{authors.photos}}</span>
+	</p>
+	{% endif %}
+	{% if authors.videos %}
+	<p class="mb-4">
+		<span class="font-light opacity-80">Vidéos</span><br>
+		<span class="font-semibold">{{authors.videos}}</span>
+	</p>
+	{% endif %}
+	{% if authors.writer %}
+	<p class="mb-4">
+		<span class="font-light opacity-80">Texte</span><br>
+		<span class="font-semibold">{{ authors.writer.fname ~ ' ' ~ authors.writer.lname }}</span>
+	</p>
+	{% endif %}
+	{% if authors.dev %}
+	<p>
+		<span class="font-light opacity-80">Développement</span><br>
+		<span class="font-semibold">{{authors.dev}}</span>
+	</p>
+	{% endif %}
+</div>
+{% endblock %}
+
+{% block frame %}
+<div class="frame fixed w-full md:h-6 z-40"></div>
+<div class="frame fixed w-full md:h-6 z-40 bottom-0"></div>
+<div class="frame fixed h-full md:w-6 z-40"></div>
+<div class="frame fixed h-full md:w-6 z-40 right-0"></div>
+{% endblock %}
+
+{% block footer_logo %}
+	
+{% endblock %}
+
+{% block footer_menu %}
+	<div class="container max-w-custom relative pb-8">
+		
+		<div class="max-w-custom mx-auto mb-6 relative">
+			<a href="https://www.blick.ch/fr" target="_blank" class="block">
+				<img src="img/blick.svg" alt="" class="w-28 -ml-2">
+			</a>
+			<span class="copyright font-bold opacity-30 absolute right-0 top-5 w-56 md:w-96 text-right">Blick | fr - Le média suisse © Blick.ch/fr</span>
+		</div>
+		
+		<div class="w-full md:w-3/4 md:grid md:grid-cols-3 md:gap-x-10">
+			<div>
+				<ul>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://storytelling.blick.ch/storytelling/2021/team_romandie/?_gl=1*zncj5u*_ga*MjAwODM5NjMxNC4xNjY5MDQ1MDgx*_ga_NKTZ1Z6QY0*MTY4MzIwNzI3OS42LjEuMTY4MzIwNzI4MC4wLjAuMA..&_ga=2.214209751.1356322992.1683191888-2008396314.1669045081" target="_blank" class="block absolute top-1/2 -translate-y-1/2">L'équipe</a></li>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://www.blick.ch/fr/services/impressum-groupe-blick-id16490742.html" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Impressum</a></li>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://www.ringier-advertising.ch/fr/portfolio/digital/blick-ch/" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Publicité</a></li>
+					<li class="h-16 border-b-2 md:border-b-0 border-gray-300 relative"><a href="https://www.blick.ch/fr/services/dispositions-de-protection-des-donnees-id18211424.html" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Protection des données</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://www.blick.ch/fr/services/conditions-generales-d-utilisation-du-groupe-blick-id16443050.html" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Conditions générales</a></li>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://www.blick.ch/fr/dossiers/" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Dossiers</a></li>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://www.blick.ch/fr/newsletters/newsletter-id16503687.html" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Newsletters</a></li>
+					<li class="h-16 border-b-2 md:border-b-0 border-gray-300 relative"><a href="https://www.blick.ch/fr/services/app-id17067782.html" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Application</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://www.facebook.com/blickfr" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Facebook</a></li>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://www.instagram.com/blick_fr" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Instagram</a></li>
+					<li class="h-16 border-b-2 border-gray-300 relative"><a href="https://twitter.com/Blick_fr" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Twitter</a></li>
+					<li class="h-16 relative"><a href="https://www.youtube.com/channel/UCKVxUfdtZsqtg3B3-wjrLOA" target="_blank" class="block absolute top-1/2 -translate-y-1/2">Youtube</a></li>
+				</ul>
+			</div>
+		</div>
+</footer>
+{% endblock %}
+
+{% block other_teasers %}
+	<div class="container max-w-custom mx-auto pt-12 pb-24">
+		<span class="font-sans font-semibold uppercase underline text-xl md:text-3xl block mb-10">Plus de formats spéciaux</span>
+		<ul class="w-full grid grid-cols-3 gap-6">
+			<li>
+				<figure class="mb-2">
+					<img src="img/placeholder.png" alt="" class="aspect-square">
+				</figure>
+				<span class="font-semibold text-lg leading-none">Suisse - UE: tout comprendre sur les 5 points qui vont mettre nos nerfs à vif </span>
+			</li>
+			<li>
+				<figure class="mb-2">
+					<img src="img/placeholder.png" alt="" class="aspect-square">
+				</figure>
+				<span class="font-semibold text-lg leading-none">Suisse - UE: tout comprendre sur les 5 points qui vont mettre nos nerfs à vif </span>
+			</li>
+			<li>
+				<figure class="mb-2">
+					<img src="img/placeholder.png" alt="" class="aspect-square">
+				</figure>
+				<span class="font-semibold text-lg leading-none">Suisse - UE: tout comprendre sur les 5 points qui vont mettre nos nerfs à vif </span>
+			</li>
+		</ul>
+	</div>
+{% endblock %}

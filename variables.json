@@ -1,0 +1,27 @@
+{
+	"title": "Trois frères romands, rois du cannabis ",
+	"titlesocial": "Trois frères romands, rois du cannabis ",
+	"description": "Alors que Genève, Lausanne ou encore Zurich s’essaient au cannabis, «L’illustré» a pu pénétrer les murs ultra-sécurisés de la société Green Brothers, important grossiste d’herbe avec ou sans THC.",
+	"authors": {
+		"photos": "Julie de Tribolet",
+		"videos": null,
+		"writer": {
+			"fname": "Antoine",
+			"lname": "Hürlimann",
+			"title": "Journaliste Blick",
+			"filetype": "png",
+			"url": "https://www.blick.ch/fr/auteurs/daniella-gorbunova-journaliste-blick-id16519907.html"
+		},
+		"dev": "César Greppin"
+	},
+	"imgSocial": "social.jpg",
+	"headertheme": "neg", 
+	"blickWhite": true,
+	"blickBlack": false,
+	"headerBoxed": false,
+	"pubDate": "2020-07-23T11:00:00+00:00",
+	"partner": {
+		"logo": "img/empty.png",
+		"link": "https://www.blick.ch/"
+	}
+}
