@@ -21,24 +21,20 @@
 h1
 {
     font-family: Poppins;
-    //font-size: 60px !important;
-    // text-shadow: 3px 6px 0 rgba(137 ,137 ,137 , 0.48);
    
     line-height: 50px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    span:last-child {
-        font-size: 65%;
-        line-height: 65%;
-    }
-    
+    font-size: 28px !important;
+    line-height: 30px !important;
+    font-weight: 700 !important;
+    background-color: white;
+
     @include breakpoint(min, medium) {
-        display: block;
-        //font-size: 100px !important;
-        line-height: 70px;
-        //text-shadow: 1px 1px 0 rgb(132, 132, 132);
-    };
+        font-size: 62px !important;
+        line-height: 65px !important;
+    }
 }
 
 h2 

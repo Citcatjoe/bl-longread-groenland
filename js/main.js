@@ -9,7 +9,53 @@
     }, 1000);
 
 
-
+    $(document).ready(function () {
+      function handleVideoStreaming() {
+          $("video").each(function () {
+              var $video = $(this);
+              var isVisible = isInViewport($video);
+              var placeholder = $video.siblings(".video-placeholder");
+  
+              if (isVisible) {
+                  if (!$video.attr("src") && $video.data("src")) {
+                      var src = $video.data("src");
+                      $video.attr("src", src);
+                      $video[0].load();
+  
+                      // Quand la vidéo est chargée, masquer le placeholder
+                      $video.on("loadeddata", function () {
+                          $video.closest(".video-wrapper").addClass("video-loaded");
+                      });
+                  }
+  
+                  if ($video[0].paused) {
+                      $video[0].play();
+                  }
+              } else {
+                  if (!$video[0].paused) {
+                      $video[0].pause();
+                  }
+                  $video.removeAttr("src");
+                  $video[0].load();
+                  $video.closest(".video-wrapper").removeClass("video-loaded"); // Remet le poster en place
+              }
+          });
+      }
+  
+      function isInViewport($element) {
+          var elementTop = $element.offset().top;
+          var elementBottom = elementTop + $element.height();
+          var viewportTop = $(window).scrollTop();
+          var viewportBottom = viewportTop + $(window).height();
+          return elementBottom > viewportTop && elementTop < viewportBottom;
+      }
+  
+      setTimeout(handleVideoStreaming, 500);
+      $(window).on("scroll resize", handleVideoStreaming);
+  });
+  
+  
+  
 
     $('.card .front button').on('click', function() {
         $(this).parent().parent().addClass('is-flipped');
@@ -47,175 +93,135 @@
 
 
      
-    // --------------------------------------------------------------
-    // --------------------------------------------------------------
-    // --------------------------------------------------------------
-    $hero = $('.hero');
-    $opening = $hero.find('.opening');
-    $openingL = $opening.find('.opening-left');
-    $openingR = $opening.find('.opening-right');
-    var openingTl = new TimelineMax({ paused: true })
-        .to($openingL, 1, { xPercent: "+=50", yPercent: "-=30", ease: Power4.easeInOut })
-        .to($openingR, 1, { xPercent: "-=50", yPercent: "-=30", ease: Power4.easeInOut }, "-=1")
-        .to($hero, 0.1, { filter: "brightness(1.3)", ease: Power4.easeInOut }, "-=0.3") // Add this line to animate $hero to filter: brightness(2)
-        .to($hero, 0.1, { filter: "brightness(1)", ease: Power4.easeInOut }, "-=0.2")
-        .to($hero, 0.1, { filter: "brightness(1.3)", ease: Power4.easeInOut }, "-=0.05") // Add this line to animate $hero to filter: brightness(2)
-        .to($hero, 0.1, { filter: "brightness(1)", ease: Power4.easeInOut }, "-=0.04"); // Add this line to animate $hero to filter: brightness(2.4)
-       
-
-    setOpening();
-    function setOpening(){
-        var setOpeningTl = new TimelineMax();
-        setOpeningTl
-            .set($openingL, { xPercent: "-=50", yPercent: "+=30", autoAlpha: 1 })
-            .set($openingR, { xPercent: "+=50", yPercent: "+=30", autoAlpha: 1 });
-        return setOpeningTl;
-    }
-
-    // --------------------------------------------------------------
-    // --------------------------------------------------------------
-    // --------------------------------------------------------------
-    var $chartImmigration = $('#chart-immigration');
-    
-    $listImmigration = $chartImmigration.find('li');
-    var $barBaseW = $(".bar-first").width();
-    var $barBaseVal = $listImmigration.first().find('.bar').attr('value');
-    $('.bar').removeClass('grow');
-
-    setImmigrationBars();
-    function setImmigrationBars(){
-        var setImmigrationBarsTl = new TimelineMax();
-        setImmigrationBarsTl
-            .set($listImmigration.find('.bar'), { width: '0' }); 
-        return setImmigrationBarsTl;
-    }
-       
-    // var $barValInPercent = 100 / $barBaseVal * 18
-    
-    // alert($barValInPercent);
-
-    // $listImmigration.each(function(index) {
-    //     var value = $(this).find('.bar').attr('value');
-    //     $(this).html(value);
-    // });
-    var graphImmigrationDone = false;
-    new ScrollMagic.Scene({triggerElement: "#chart-immigration"})
-        .on("enter", function (event) {
-            if (!graphImmigrationDone)
-            {
-                var $resultInNbr;
-                $listImmigration.each(function(index) {
-                    var value = $(this).find('.bar').attr('value');
-                    $(this).find('.counter').html(value);
-    
-                    $resultInNbr = 100 / $barBaseVal * value;
-                    $resultInPx = $barBaseW / 100 * $resultInNbr;
-                    $resultInPxFraction = $resultInPx / 100 * 30;
-
-                    var barElement = $(this).find('.bar');
-                    var counterElement = $(this).find('.counter');
-                    TweenMax.to(barElement, 1.5, { width: $resultInPx-$resultInPxFraction, ease: Power4.easeInOut });
-    
-                    //console.log($resultInPx-20);
-                });
-    
-    
-                $('.counter').counterUp({
-                    delay: 10,
-                    time: 1000
-                });
-
-                graphImmigrationDone = true;
-            }
-           
-        }).triggerHook(0.7).addTo(controller);
+  
 
 
 
 
-
-
-
-
-
-    var $chartSmic = $('#chart-smic');
-    var $listSmic = $chartSmic.find('li');
-    var graphSmicDone = false;
-
-
-    
-
-    new ScrollMagic.Scene({triggerElement: "#chart-smic"})
-        .on("enter", function (event) {
-            var $barBaseVal = $listSmic.first().find('.bar').attr('value');
-            if (!graphSmicDone)
-            {
-               
-                $listSmic.each(function(index) {
-                    var value = $(this).find('.bar').attr('value');
-                    $(this).find('.counter2').html(value);
-                    
-    
-                    $resultInNbr = 100 / $barBaseVal * value;
-                    $resultInPx = $barBaseW / 100 * $resultInNbr;
-                    $resultInPxFraction = $resultInPx / 100 * 30;
-    
-                    var barElement = $(this).find('.bar');
-                    TweenMax.to(barElement, 1.5, { width: $resultInPx-$resultInPxFraction, ease: Power4.easeInOut });
-    
-                });
-    
-    
-                $('.counter2').counterUp({
-                    delay: 10,
-                    time: 1000
-                });
-
-                graphSmicDone = true;
-            }
-           
-        }).triggerHook(0.7).addTo(controller);
-
-
-
-
-    new jBox('Tooltip', {
-        attach: '.tooltip',
-        trigger: 'click',
-        closeOnMouseleave: false,
-        closeButton: true,
-        maxWidth: 350,
-        position: {x: 'center', y: 'top'},
-        offset: {x: 0, y: -10},
-        animation: 'move'
-    });
-    
    
 
          
 
-            $('#chapter-selection').on('change', function() {
-                var selectedChapter = $(this).val();
-                var targetElement = $('#' + selectedChapter);
-                if (targetElement.length) {
-                    $('html, body').animate({
-                        scrollTop: targetElement.offset().top
-                    }, 1000);
-                }
-            });
-
-            // Rest of your code...
-
-
-
-        $('#btn-encart').on('click', function() {
-            // Your code here
-            //alert('Button #btn-encart clicked!');
-            $('.encart-hidden').removeClass('encart-hidden');
-            $('.encart-tohide').addClass('encart-hidden');
-            $(this).remove();
-        });
 	
 
+        var options = {
+            series: [{
+              name: 'Taux de suicide pour 100\'000 habitants',
+              data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Start with zero values
+            },{
+              name: 'Moyenne mondiale de <b>9</b>',
+              type: 'line',
+              data: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+            }],
+            chart: {
+            height: 400,
+            type: 'bar',
+            toolbar: {
+              show: false
+            }
+          },
+          colors: ['rgb(10, 106, 165)', 'rgb(235, 227, 88)'],
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              columnWidth: '60%',
+            }
+          },
+          stroke: {
+            width: [0, 3],
+            curve: 'straight'
+          },
+          dataLabels: {
+            enabled: true,
+            enabledOnSeries: [0],
+            formatter: function (val) {
+              return val;
+            },
+            style: {
+              fontSize: '12px',
+              colors: ['#ffffff']
+            }
+          },
+          xaxis: {
+            categories: ['Groenland', 'Lesotho', 'Guyana', 'Eswatini', 'Corée', 'Kiribati', 'Micronésie', 'Lituanie', 'Suriname', 'Russie', 'Suisse'],
+            labels: {
+              rotate: -45,
+              style: {
+                fontSize: '12px'
+              }
+            }
+            // title: {
+            //   text: 'Pays'
+            // }
+          },
+          grid: {
+            borderColor: '#e7e7e7',
+            row: {
+              colors: ['#f3f3f3', 'transparent'],
+              opacity: 0.5
+            },
+          },
+          yaxis: {
+            min: 0,
+            max: 100,
+            tickAmount: 10,
+            labels: {
+              formatter: function(val) {
+                return Math.round(val)
+              }
+            }
+          },
+          tooltip: {
+            enabled: false,
+            y: {
+              formatter: function (val) {
+                return val + " suicides pour 100'000 habitants"
+              }
+            }
+          }
+          };
+  
+          var chart = new ApexCharts(document.querySelector("#chart"), options);
+          
+          // Render empty chart immediately
+          chart.render();
+          
+          // Cacher le titre initialement
+          gsap.set("#chart-title", { autoAlpha: 1 });
+          
+          // Données finales
+          var finalData = [80, 72, 40, 29, 29, 28, 28, 26, 25, 25, 14];
+          
+          var chartRendered = false;
+          new ScrollMagic.Scene({
+            triggerElement: "#chart",
+            triggerHook: 0.5
+          })
+          .on("enter", function (event) {
+            if (!chartRendered) {
+              // Animer les barres
+              chart.updateSeries([{
+                name: 'Taux de suicide pour 100\'000 habitants',
+                data: finalData
+              }, {
+                name: 'Moyenne mondiale de <b>9</b>',
+                type: 'line',
+                data: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+              }], true);
+              
+              // Fade in du titre
+              gsap.to("#chart-title", {
+                duration: 1,
+                autoAlpha: 1,
+                ease: "power2.out"
+              });
+              chartRendered = true;
+            }
+          })
+          .addTo(controller);
+          
+
+
+          
   
 })(jQuery);

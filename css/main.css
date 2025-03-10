@@ -54,15 +54,15 @@ h1 {
   line-height: 50px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-h1 span:last-child {
-  font-size: 65%;
-  line-height: 65%;
+  font-size: 28px !important;
+  line-height: 30px !important;
+  font-weight: 700 !important;
+  background-color: white;
 }
 @media (min-width: 768px) {
   h1 {
-    display: block;
-    line-height: 70px;
+    font-size: 62px !important;
+    line-height: 65px !important;
   }
 }
 
@@ -552,7 +552,7 @@ header.headroom--unpinned {
   bottom: 1px;
 }
 .jBox-wrapper .jBox-pointer::after {
-  background: #FFE293;
+  background: #ffe293;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0);
   border-bottom: 1px solid black;
   border-right: 1px solid black;
@@ -666,6 +666,12 @@ header.headroom--unpinned {
 .hero {
   background-size: cover;
   background-position: left center !important;
+  height: 50vh;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 80vh;
+  }
 }
 .hero svg#opening {
   position: absolute;
@@ -695,27 +701,34 @@ header.headroom--unpinned {
   position: absolute;
 }
 
-.player1-dimensions, .player2-dimensions, .player3-dimensions, .player4-dimensions {
+.player1-dimensions,
+.player2-dimensions,
+.player3-dimensions,
+.player4-dimensions {
   width: 100%;
   height: 100%;
 }
 
-.opening-left, .opening-right {
+.opening-left,
+.opening-right {
   width: 113% !important;
   max-width: 10000px;
 }
 @media (min-width: 576px) {
-  .opening-left, .opening-right {
+  .opening-left,
+.opening-right {
     width: 108% !important;
   }
 }
 @media (min-width: 768px) {
-  .opening-left, .opening-right {
+  .opening-left,
+.opening-right {
     width: 105% !important;
   }
 }
 @media (min-width: 992px) {
-  .opening-left, .opening-right {
+  .opening-left,
+.opening-right {
     width: 103% !important;
   }
 }
@@ -737,11 +750,11 @@ header.headroom--unpinned {
 }
 
 .heading {
-  background: #A7A879;
+  background: #a7a879;
 }
 
 .anim {
-  background: #FFFBED;
+  background: #fffbed;
 }
 
 footer {
@@ -761,7 +774,7 @@ footer {
 }
 
 .color-gradient {
-  background: transparent linear-gradient(60deg, #abd5d4 0%, #EDFFFF 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(60deg, #abd5d4 0%, #edffff 100%) 0% 0% no-repeat padding-box;
 }
 
 .parallax {
@@ -832,7 +845,11 @@ img.miniheader-img {
   background: #65cbe0;
 }
 
-#btn1, #btn2, #btn3, #btn4, #btn-pass {
+#btn1,
+#btn2,
+#btn3,
+#btn4,
+#btn-pass {
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -920,6 +937,64 @@ select {
 
 .encart-body .encart-hidden {
   display: none;
+}
+
+.video-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Optional overlay */
+}
+
+.video-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+}
+
+.video-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  display: block;
+  opacity: 0; /* Masque la vidéo tant qu'elle n'est pas chargée */
+  transition: opacity 0s ease-in-out;
+}
+
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: opacity 0s ease-in-out;
+}
+
+.video-loaded video {
+  opacity: 1 !important; /* Rend la vidéo visible une fois chargée */
+}
+
+.video-loaded .video-placeholder {
+  opacity: 0; /* Cache le placeholder */
 }
 
 html {
